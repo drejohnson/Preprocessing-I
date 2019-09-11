@@ -21,7 +21,7 @@ body {
 body {
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
+  color: #111;
 }
 h1,
 h2,
@@ -29,12 +29,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Oswald', sans-serif;
   font-weight: 400;
   line-height: 1.2;
 }
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 a {
   color: inherit;
@@ -46,4 +47,68 @@ img {
 ul,
 li {
   list-style: none;
+}
+hr {
+  width: 100%;
+}
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: yellow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  padding: 0 0.5rem;
+  z-index: 100;
+}
+header nav > a {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+.marquee {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 3rem;
+  z-index: 3;
+}
+.marquee .top-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  margin-bottom: 2rem;
+}
+.marquee .top-info img {
+  object-fit: cover;
+  object-position: center;
+}
+.marquee .top-info .intro {
+  padding: 2rem;
+}
+.marquee .top-info .intro h1 span {
+  color: deepskyblue;
+}
+.marquee .bottom-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.marquee .bottom-info button {
+  background-color: yellow;
+  color: black;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: 1rem;
 }
