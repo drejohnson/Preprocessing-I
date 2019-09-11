@@ -84,6 +84,7 @@ img {
 
 ul, li {
 	list-style: none;
+	.reset();
 }
 
 hr {
@@ -130,16 +131,28 @@ header {
 	z-index: 3;
 	
 	.top-info {
-		display: flex;
-		flex-direction: column;
+		.flex-column();
 		justify-content: space-around;
 		align-items: center;
 		height: 80vh;
 		margin-bottom: @spacing-lg;
 		
+		@media @desktop { 
+			flex-direction: row;
+		}
+
+		@media @tablet { 
+			height: 100vh;
+		}
+		
 		img {
+			width: 100%;
 			object-fit: cover;
 			object-position: center;
+
+			@media @desktop { 
+				object-position: top;
+			}
 		}
 	}
 
@@ -152,8 +165,7 @@ header {
 	}
 
 	.bottom-info {
-		display: flex;
-		flex-direction: column;
+		.flex-column();
 		padding: @spacing-lg;
 		p {
 
@@ -164,7 +176,99 @@ header {
 			font-size: 1.25rem;
 			text-transform: uppercase;
 			padding: @spacing-md;
+			margin-top: @spacing-lg;
+
+			@media @desktop {
+				width: 220px;
+			}
 		}
+	}
+}
+
+.bio {
+	display: flex;
+	flex-direction: column;
+	background-color: #fafafa;
+	padding: @spacing-lg; 
+
+	@media @desktop { 
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.listen {
+		margin-bottom: @spacing-md;
+		@media @desktop { 
+			width: 48%;
+		}
+	}
+	.skills {
+		ul {
+			padding: 0;
+		}
+
+		ul > li:first-child {
+			border-top: 1px solid #111
+		}
+
+		ul > li {
+			color: deepskyblue;
+			font-weight: 500;
+			padding: @spacing-sm;	
+			border-bottom: 1px solid #111
+		}
+
+		@media @desktop { 
+			width: 48%;
+		}
+	}
+	h2 {
+		font-weight: 600;
+	}
+}
+
+.work {
+	padding: @spacing-lg; 
+
+	.faux-table {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 0 3em 0;
+		padding: 0;
+	}
+	.faux-table-cell {
+		box-sizing: border-box;
+		flex-grow: 1;
+		width: 100%;
+		padding: 0.8em 1.2em;
+		overflow: hidden;
+		list-style: none;
+		border: solid 3px white;
+		background: fade(slategrey,20%);
+		> h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+	}
+
+	.label {
+		background-color: #111;
+		color: white;
+	}
+
+	.faux-table--2cols > .faux-table-cell  { width: 50%; }
+	.faux-table--3cols > .faux-table-cell  { width: 33.33%; }
+	.faux-table--4cols > .faux-table-cell  { width: 25%; }
+
+}
+
+footer {
+	background-color: deepskyblue;
+	width: 100%;
+	height: 8rem;;
+	padding: @spacing-lg; 
+
+	p {
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
 	}
 }
 
