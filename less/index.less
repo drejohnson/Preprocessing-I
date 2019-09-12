@@ -5,7 +5,8 @@
 @spacing-sm: .5rem;
 @spacing-md: 1rem;
 @spacing-lg: 2rem;
-
+// blue color
+@blue: deepskyblue;
 // avatar image size
 @avatar-sm: 33%;
 @avatar-md: 55%;
@@ -13,6 +14,7 @@
 @wide-screen: ~'(min-width: 1200px)';
 @desktop: ~'(min-width: 992px)';
 @tablet: ~'(min-width: 768px)';
+@phone-down: ~'(max-width: 500px)';
 
 .reset() {
 	margin: 0;
@@ -109,8 +111,13 @@ header {
 	height: 3rem;
 	padding: 0 @spacing-sm;
 	z-index: 100;
+
+	@media @phone-down { 
+		justify-content: center;
+	}
+
 	nav {
-		
+		display: flex;
 	}
 
 	nav > a {
@@ -118,6 +125,11 @@ header {
 		text-transform: uppercase;
 		text-decoration: none;
 		padding: 0 @spacing-sm;
+
+		&:hover {
+			background-color: darken(yellow, 5%);
+			color: darken(@blue, 5%);
+		}
 	}
 }
 
@@ -159,7 +171,7 @@ header {
 	.top-info .intro {
 		padding: @spacing-lg;
 		h1 span {
-			color: deepskyblue;
+			color: @blue;
 		}
 		p {}
 	}
@@ -212,7 +224,7 @@ header {
 		}
 
 		ul > li {
-			color: deepskyblue;
+			color: @blue;
 			font-weight: 500;
 			padding: @spacing-sm;	
 			border-bottom: 1px solid #111
@@ -260,7 +272,7 @@ header {
 }
 
 footer {
-	background-color: deepskyblue;
+	background-color: @blue;
 	width: 100%;
 	height: 8rem;;
 	padding: @spacing-lg; 

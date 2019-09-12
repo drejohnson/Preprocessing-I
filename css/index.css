@@ -70,11 +70,23 @@ header {
   padding: 0 0.5rem;
   z-index: 100;
 }
+@media (max-width: 500px) {
+  header {
+    justify-content: center;
+  }
+}
+header nav {
+  display: flex;
+}
 header nav > a {
   font-size: 1.25rem;
   text-transform: uppercase;
   text-decoration: none;
   padding: 0 0.5rem;
+}
+header nav > a:hover {
+  background-color: #e5e600;
+  color: #00ace6;
 }
 .marquee {
   position: relative;
