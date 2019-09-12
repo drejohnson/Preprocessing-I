@@ -1,19 +1,98 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Resume</title>
-
+  <link href="https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
-
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
 </head>
-
 <body>
-  <h1>My Resume</h1>
+  <div class="container">
+    <header>
+      <div class="logo"></div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <section class="marquee">
+      <div class="top-info">
+        <img src="https://aboutme.imgix.net/background/deandre.johnson_1339005834_16.jpg?q=40&dpr=2&auto=format&fit=max&w=1200&h=820.3125" alt="Avatar">
+        <div class="intro">
+          <h1>DeAndre Johnson - <span>Fullstack Developer</span></h1>
+          <p>Crushing Lambda School to become rockstar developer</p>
+        </div>
+      </div>
+      <hr>
+      <div class="bottom-info">
+        <p>
+            I'm always looking for new oppurtunities to provide value and to share my expertise with teams building awesome software.
+        </p>
+        <button>Let's Team Up</button>
+      </div>
+    </section>
+    <section class="bio">
+      <div class="listen">
+        <h2>Listen Up</h2>
+        <p>
+          As a frontend developer, my job is to utilize the latest tech,
+          trends and best practices for building performant apps in
+          javascript. My goal is to provide the best user experience while
+          also optimizing for speed and performance. In the rapidly evolving
+          landscape of frontend web development, I'm constantly on a journey
+          to learn more and to grow as a developer.
+        </p>
+      </div>
+      <div class="skills">
+        <h2>Stuff I'm Good At</h2>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS</li>
+          <li>Responsive Design</li>
+          <li>javaScript</li>
+        </ul>
+      </div>
+    </section>
+    <section class="work">
+    <div class="faux-table faux-table--4cols">
+
+        <div style="order:1;" class="faux-table-cell label">
+          <h3>Yrs</h3>
+        </div>
+        <div style="order:2;" class="faux-table-cell">4</div>
+        <div style="order:3;" class="faux-table-cell">2</div>
+        <div style="order:4;" class="faux-table-cell">3</div>
+      
+        <div style="order:1;" class="faux-table-cell label">
+          <h3>Company</h3>
+        </div>
+        <div style="order:2;" class="faux-table-cell">Tommorrow Pictures, Inc</div>
+        <div style="order:3;" class="faux-table-cell">Beyond Graphics</div>
+        <div style="order:4;" class="faux-table-cell">DefCulture, LLC</div>
+      
+        <div style="order:1;" class="faux-table-cell label">
+          <h3>Title</h3>
+        </div>
+        <div style="order:2;" class="faux-table-cell">Frontend Developer</div>
+        <div style="order:3;" class="faux-table-cell">Frontend Developer</div>
+        <div style="order:4;" class="faux-table-cell">Frontend Developer</div>
+
+        <div style="order:1;" class="faux-table-cell label">
+            <h3>Tech Used</h3>
+          </div>
+
+          <div style="order:2;" class="faux-table-cell">javaScript</div>
+          <div style="order:3;" class="faux-table-cell">HTML, CSS</div>
+          <div style="order:4;" class="faux-table-cell">HTML, CSS</div>
+      
+      </div>
+    </section>
+    <footer>
+      <p>Copyright 2019</p>
+    </footer>
+  </div>
 </body>
 </html>

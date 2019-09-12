@@ -1,59 +1,274 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// font variables
+@body-font: 'Lato', sans-serif;
+@heading-font: 'Oswald', sans-serif;
+// spacing
+@spacing-sm: .5rem;
+@spacing-md: 1rem;
+@spacing-lg: 2rem;
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+// avatar image size
+@avatar-sm: 33%;
+@avatar-md: 55%;
+// mobile first breakpoint variables
+@wide-screen: ~'(min-width: 1200px)';
+@desktop: ~'(min-width: 992px)';
+@tablet: ~'(min-width: 768px)';
+
+.reset() {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+.flex-column() {
+	display: flex;
+	flex-direction: column;
+}
+
+// custom reset for modern browsers
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 * {
-    box-sizing: border-box;
+  min-height: 0;
+  min-width: 0;
 }
 
-html, body {
-    height: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	font-family: @heading-font;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+ul, li {
+	list-style: none;
+	.reset();
+}
+
+hr {
+	margin: 0 @spacing-lg;
+}
+
+// page styles
+.container {
+	position: relative;
+	min-height: 100vh;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	background-color: yellow;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3rem;
+	padding: 0 @spacing-sm;
+	z-index: 100;
+	nav {
+		
+	}
+
+	nav > a {
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 0 @spacing-sm;
+	}
+}
+
+.marquee {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	// padding: @spacing-lg;
+	margin-top: 3rem;
+	z-index: 3;
+	
+	.top-info {
+		.flex-column();
+		justify-content: space-around;
+		align-items: center;
+		height: 80vh;
+		margin-bottom: @spacing-lg;
+		
+		@media @desktop { 
+			flex-direction: row;
+		}
+
+		@media @tablet { 
+			height: 100vh;
+		}
+		
+		img {
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+
+			@media @desktop { 
+				object-position: top;
+			}
+		}
+	}
+
+	.top-info .intro {
+		padding: @spacing-lg;
+		h1 span {
+			color: deepskyblue;
+		}
+		p {}
+	}
+
+	.bottom-info {
+		.flex-column();
+		padding: @spacing-lg;
+		p {
+
+		}
+		button {
+			background-color: yellow;
+			color: black;
+			font-size: 1.25rem;
+			text-transform: uppercase;
+			padding: @spacing-md;
+			margin-top: @spacing-lg;
+
+			@media @desktop {
+				width: 220px;
+			}
+		}
+	}
+}
+
+.bio {
+	display: flex;
+	flex-direction: column;
+	background-color: #fafafa;
+	padding: @spacing-lg; 
+
+	@media @desktop { 
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.listen {
+		margin-bottom: @spacing-md;
+		@media @desktop { 
+			width: 48%;
+		}
+	}
+	.skills {
+		ul {
+			padding: 0;
+		}
+
+		ul > li:first-child {
+			border-top: 1px solid #111
+		}
+
+		ul > li {
+			color: deepskyblue;
+			font-weight: 500;
+			padding: @spacing-sm;	
+			border-bottom: 1px solid #111
+		}
+
+		@media @desktop { 
+			width: 48%;
+		}
+	}
+	h2 {
+		font-weight: 600;
+	}
+}
+
+.work {
+	padding: @spacing-lg; 
+
+	.faux-table {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 0 3em 0;
+		padding: 0;
+	}
+	.faux-table-cell {
+		box-sizing: border-box;
+		flex-grow: 1;
+		width: 100%;
+		padding: 0.8em 1.2em;
+		overflow: hidden;
+		list-style: none;
+		border: solid 3px white;
+		background: fade(slategrey,20%);
+		> h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+	}
+
+	.label {
+		background-color: #111;
+		color: white;
+	}
+
+	.faux-table--2cols > .faux-table-cell  { width: 50%; }
+	.faux-table--3cols > .faux-table-cell  { width: 33.33%; }
+	.faux-table--4cols > .faux-table-cell  { width: 25%; }
+
+}
+
+footer {
+	background-color: deepskyblue;
+	width: 100%;
+	height: 8rem;;
+	padding: @spacing-lg; 
+
+	p {
+		font-size: 1.5rem;
+		color: white;
+		text-align: center;
+	}
 }
 
