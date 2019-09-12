@@ -160,16 +160,17 @@ header nav > a:hover {
     justify-content: space-between;
   }
 }
-.bio .listen {
-  margin-bottom: 1rem;
-}
 @media (min-width: 992px) {
   .bio .listen {
     width: 48%;
   }
 }
+.bio .listen p {
+  margin: 2rem 0;
+}
 .bio .skills ul {
   padding: 0;
+  margin: 2rem 0;
 }
 .bio .skills ul > li:first-child {
   border-top: 1px solid #111;
